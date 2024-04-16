@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#banner{
+    background: url(https://media.meer.com/attachments/67002b29c73b35b60914c57dfeceb1c7f07eeae4/store/fill/1020/574/ab24be68314650adb7fff71adf67c532382ab7512b1a591ae1e3edb7b215/Vista-panoramica-de-Medellin-Colombia.jpg) no-repeat center;
+    height: 90vh;
+    background-size: cover;
+}
+
+
+#banner .card{
+    width: 350px;
+    height: 200px;
+    opacity: 0.8;
+}
+
+#banner .card .btn{
+    background-color: rgb(24, 212, 33);
+    font-weight: bold;
+}
+
+#banner .card .btn:hover{
+    background-color: rgb(5, 201, 5);
+}

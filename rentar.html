@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Renta de vehiculos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/renta.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg px-5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img
+              src="./img/zarla-alquila-car-1x1-2400x2400-20220110-mfrrgktv3rk34bb93pm7.png"
+              alt="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-column z-3 bg-white" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./rentar.html">Rentar Autos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./devolucion.html"
+                  >Devolucion de Autos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html">Iniciar sesion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./registro.html">Registro</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-fluid d-flex justify-content-center mt-4 renta">
+      <div class="card border-0 shadow d-flex flex-row">
+        <div class="renta-img">
+            <img src="./img/img-renta.jpeg" alt="" class="">
+        </div>
+        <div class=" renta-form px-4 py-3">
+          <h3 class="text-center">Rentar</h3>
+          <form action="">
+            <label for="platenumber">Placa</label>
+            <select name="platenumber" id="platenumber" class="form-select">
+              <option value="" selected disabled>Selecciona una placa</option>
+              <option value=""></option>
+            </select>
+            <label for="initialdate" class="form-label mt-2"
+              >Fecha inicial</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              name="initialdate"
+              id="initialdate"
+            />
+            <label for="finaldate" class="form-label mt-2">Fecha final</label>
+            <input
+              type="date"
+              class="form-control"
+              name="finaldate"
+              id="finaldate"
+            />
+            <label for="rentnumber" class="form-label mt-2"
+              >Numero de renta</label
+            >
+            <input
+              type="text"
+              class="form-control "
+              name="rentnumber"
+              id="rentnumber"
+              value=""
+              readonly
+              placeholder="Numero de renta"
+            />
+            <button
+              type="button"
+              class="btn btn-success my-3"
+              id="btnsaverent"
+              name="btnsaverent"
+            >
+              Guardar
+            </button>
+          </form>
+
+          <div class="d-flex flex-column text-center">
+            <!-- modal para ver el listado de vehiculos -->
+            <a
+              type="button"
+              class="text-decoration-none"
+              data-bs-toggle="modal"
+              data-bs-target="#listadoCarros"
+              id="btnListCars"
+            >
+              Listar vehiculos disponibles
+            </a>
+            <div
+              class="modal fade"
+              id="listadoCarros"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Listado de autos
+                    </h1>
+                    
+                  </div>
+                  <div class="modal-body">
+                    <table class="table" id="carlisttable">
+                      <thead>
+                        <th scope="col">Marca</th>
+                        <th scope="col">numero de placa</th>
+                        <th scope="col">valor del dia</th>
+                        <th scope="col">Estado</th>
+                      </thead>
+                      <tbody>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="./login.html" class="text-decoration-none" id="btn-logout">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/rentar.js"></script>
+  </body>
+</html>

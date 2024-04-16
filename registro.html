@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Renta de vehiculos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/registro.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg px-5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img
+              src="./img/zarla-alquila-car-1x1-2400x2400-20220110-mfrrgktv3rk34bb93pm7.png"
+              alt="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse flex-column z-3 bg-white"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="./rentar.html">Rentar Autos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./devolucion.html"
+                  >Devolucion de Autos</a
+                >
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html">Iniciar sesion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./registro.html">Registro</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid d-flex justify-content-center mt-5">
+      <div class="card shadow">
+        <div class="registro mt-2 d-flex flex-column align-items-center">
+          <p class="text-center mb-3 fs-4">Registro de Usuario</p>
+          <form action="" class="px-5" id="register-form">
+            <div class="row">
+              <div class="col-6">
+                <label for="user-name" class="fw-bold">Usuario</label>
+                <input
+                  type="text"
+                  class="form-control my-2"
+                  id="user-name"
+                  name="user-name"
+                  placeholder="Usuario"
+                />
+              </div>
+              <div class="col-6">
+                <label for="name" class="fw-bold">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control my-2"
+                  id="name"
+                  name="name"
+                  placeholder="Nombre"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="rol" class="fw-bold">Rol</label>
+                <select name="rol" id="rol" class="form-select my-2">
+                  <option value="" selected disabled>Seleciona tu rol</option>
+                  <option value="usuario">Usuario</option>
+                  <option value="administrador">Administrador</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="reserved-word" class="fw-bold"
+                  >Palabra reservada</label
+                > 
+                <input
+                  type="text"
+                  class="form-control my-2"
+                  id="reserved-word"
+                  name="reserved-word"
+                  placeholder="Palabra reservada"
+                />
+              </div>
+            </div>
+          </form>
+          <button type="button" class="btn mt-3" id="btn-register">
+            registrarse
+          </button>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/register.js"></script>
+  </body>
+</html>

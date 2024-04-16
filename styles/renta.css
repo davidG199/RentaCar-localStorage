@@ -1,0 +1,45 @@
+.renta .card {
+    width: 700px;
+    background-color: rgb(248, 248, 248);
+}
+
+.renta .card .renta-img{
+    width: 50%;
+    
+}
+
+.renta .card .renta-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 0 0 6px ;
+}
+
+.renta .card .renta-form {
+    width: 50%;
+}
+
+.renta .card .renta-form #btnsaverent,
+.devolucion .card .devolucion-form #btnsavedevolucion
+{
+    position: relative;
+    left: 110px;
+    background-color: rgb(24, 212, 33);
+    border: none;
+    transition: all 300ms ease;
+}
+
+.renta .card .renta-form button{
+    background-color: rgb(24, 212, 33);
+    border: none;
+}
+
+.renta .card .renta-form button:hover,
+.devolucion .card .devolucion-form #btnsavedevolucion:hover
+{
+    background-color: rgb(5, 185, 5);
+}
+
+.devolucion .card .devolucion-form #btnsavedevolucion{
+    left: 91px;
+}

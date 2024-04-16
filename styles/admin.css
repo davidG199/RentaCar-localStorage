@@ -1,0 +1,18 @@
+main .form-admin .card .footer button{
+    transition: all 300ms ease;
+    background-color: rgb(24, 212, 33);
+    color: white;
+    /* width: 50px; */
+}
+
+main .form-admin .card .footer button:hover{
+    background-color: rgb(5, 201, 5);
+}
+
+main .form-admin {
+    width: 100%;
+}
+
+main .form-admin .card{
+    width: 600px;
+}
