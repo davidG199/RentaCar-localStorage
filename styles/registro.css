@@ -1,8 +1,9 @@
 main .card {
-    width: 650px;
-    height: 300px;
+    /* width: 650px;
+    height: 300px; */
     border: none;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(235, 235, 235);
+    box-shadow: 2px 5px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
 main .card .registro button{
@@ -18,5 +19,4 @@ main .card .registro button:hover{
 
 main .card .registro form{
     width: 100%;
- 
 }
