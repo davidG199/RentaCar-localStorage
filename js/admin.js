@@ -46,6 +46,7 @@ function addCar(plateNumber, brand, state, dailyValue, cars) {
             dailyValue: dailyValue
         });
         localStorage.setItem("cars", JSON.stringify(cars));
+        cleanForm(); // Limpiar el formulario después de agregar un nuevo auto
         alert('Auto agregado con éxito');
     } else {
         alert("Vehículo ya registrado");
@@ -76,5 +77,11 @@ function buildTable(cars) {
     });
 }
 
+function cleanForm(){
+    plateNumber.value = "";
+    brand.value = "";
+    state.value = "";
+    dailyValue.value = "";
+}
 
 

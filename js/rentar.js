@@ -11,7 +11,7 @@ function fillSelectPlate() {
     //limpiamos el select
     plateNumber.innerHTML = "<option value='' selected disabled>Selecciona una placa</option>";
     //filtramos el select 
-    let avaliableCars = cars.filter(car => !rent.some(rental => rental.plateNumber === car.plateNumber))
+    let avaliableCars = cars.filter(car => car.state === "Disponible");
     //utilizamos un foreach para llenar las opciones con las placas disponibles
     avaliableCars.forEach(function (car) {
         let plateOption = document.createElement("option")
@@ -22,16 +22,22 @@ function fillSelectPlate() {
 
     //limpiamos la tabla en el modal
     let carListTable = document.getElementById("carlisttable")
-    carListTable.innerHTML = "<thead><th>Marca</th><th>Número de placa</th><th>Valor del día</th><th>Estado</th></thead><tbody></tbody>";
+    carListTable.innerHTML = `
+    <thead>
+        <th>Marca</th>
+        <th>Placa</th>
+        <th>Valor día</th>
+        <th>Estado</th>
+    </thead>
+    <tbody></tbody>
+    `;
 
     //utilizamos un foreach para llenar las filas de las tablas con los autos disponibles 
-    avaliableCars.forEach(function (car) {
+    cars.forEach(function (car) {
     const newRow = carListTable.insertRow();
     newRow.innerHTML = `<td>${car.brand}</td><td>${car.plateNumber}</td><td>${car.dailyValue}</td><td>${car.state}</td>`
 
     })
-
-
 
 }
 

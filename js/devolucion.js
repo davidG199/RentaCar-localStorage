@@ -9,28 +9,32 @@ let returnDate = document.getElementById("returndate")
 function fillSelectRent() {
     rentNumber.innerHTML = "<option value='' selected disabled>Numero de renta</option>";
 
+    //filtramos el select
     let avaliableRentNumbers = rent.filter(renta => renta.status === "activa")
 
+    //utilizamos un foreach para llenar las opciones con los numeros de renta disponibles
     avaliableRentNumbers.forEach(function (renta) {
         let option = document.createElement("option")
         option.value = renta.rentNumber;
         option.text = renta.rentNumber;
+        
         rentNumber.appendChild(option)
     })
 }
 document.addEventListener("DOMContentLoaded", function () {
     fillSelectRent();
-
+    
+    //cuando se selecciona un numero de renta, se llenan los campos con la placa y la fecha de la renta
     rentNumber.addEventListener("change", function () {
         //obtener el numero de renta
         let selectRentNumber = rentNumber.value;
         //buscamos la renta correspondiente al numero seleccionado
         let selectRent = rent.find(renta => renta.rentNumber == selectRentNumber)
         console.log(selectRent);
-        //mostrat la placa en el campo rentNumber
+        //mostrar la placa y la fecha en sus respectivos campos
         if (selectRent) {
             plateNumber.value = selectRent.plateNumber
-            returnDate.value = selectRent.returnDate || ""
+            returnDate.value = selectRent.finalDate
         } else {
             alert("La renta seleccionada no existe o no esta disponible")
             plateNumber.value = ""
@@ -39,14 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 })
 
-function addReturnCar (rentNumber, plateNumber, returnDate){
-    returnCar.push({
-        rentNumber: rentNumber,
-        plateNumber: plateNumber,
-        returnDate: returnDate
-    })
-    localStorage.setItem("returnCar", JSON.stringify(returnCar));
-}
+// function addReturnCar (rentNumber, plateNumber, returnDate){
+//     returnCar.push({
+//         rentNumber: rentNumber,
+//         plateNumber: plateNumber,
+//         returnDate: returnDate
+//     })
+//     localStorage.setItem("returnCar", JSON.stringify(returnCar));
+// }
 function updateCarState(plateNumber, state) {
     let carIndex = cars.findIndex(car => car.plateNumber === plateNumber);
     if (carIndex !== -1) {
@@ -61,7 +65,7 @@ document.getElementById("btnsavedevolucion").addEventListener('click', function 
     let selectedRent = rent.find(renta => renta.rentNumber == rentNumber.value);
 
     if (rentNumber.value != "" && plateNumber.value != "" && returnDate.value != "") {
-        addReturnCar(rentNumber.value, plateNumber.value, returnDate.value)
+        // addReturnCar(rentNumber.value, plateNumber.value, returnDate.value)
         if (selectedRent && selectedRent.status === "activa") {
             selectedRent.status = "inactiva";
             updateCarState(plateNumber.value, "Disponible")
