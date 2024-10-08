@@ -43,14 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 })
 
-// function addReturnCar (rentNumber, plateNumber, returnDate){
-//     returnCar.push({
-//         rentNumber: rentNumber,
-//         plateNumber: plateNumber,
-//         returnDate: returnDate
-//     })
-//     localStorage.setItem("returnCar", JSON.stringify(returnCar));
-// }
 function updateCarState(plateNumber, state) {
     let carIndex = cars.findIndex(car => car.plateNumber === plateNumber);
     if (carIndex !== -1) {
@@ -73,10 +65,24 @@ document.getElementById("btnsavedevolucion").addEventListener('click', function 
             // Guardar los cambios en el almacenamiento local
             localStorage.setItem("rent", JSON.stringify(rent));
             fillSelectRent();
-    
+            cleanForm();
+            swal.fire({
+                title: 'Renta devuelta con éxito',
+                confirmButtonText: 'Aceptar'
+            })
         }
     } else{
-        alert("Debes de llenar todos los campos")
+        swal.fire({
+            title: 'Error',
+            text: 'Debes de llenar todos los campos',
+            confirmButtonText: 'Aceptar'
+        })
     }
 });
+
+function cleanForm(){
+    rentNumber.value = "";
+    plateNumber.value = "";
+    returnDate.value = "";
+}
 

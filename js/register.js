@@ -24,8 +24,13 @@
                 reservedWord:reservedWord
             })
             localStorage.setItem("users", JSON.stringify(users));
-            alert("Usuario registrado exitosamente")
-            window.location.href = "login.html"
+            swal.fire({
+                title: 'Usuario registrado correctamente',
+                icon:'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                window.location.href = "login.html"
+            })
             
         } else {
             alert("Usuario ya existente")
@@ -50,7 +55,11 @@
                 reservedWord.value
             )
         } else{
-            alert("debes ingresasr todos los datos");
+            swal.fire({
+                title: 'Error!',
+                text: 'Debes ingresar todos los campos',
+                confirmButtonText: 'Aceptar'
+            })
         }
 
     })

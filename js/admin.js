@@ -47,9 +47,17 @@ function addCar(plateNumber, brand, state, dailyValue, cars) {
         });
         localStorage.setItem("cars", JSON.stringify(cars));
         cleanForm(); // Limpiar el formulario después de agregar un nuevo auto
-        alert('Auto agregado con éxito');
+        swal.fire({
+            title: "Auto agregado con éxito",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+        })
     } else {
-        alert("Vehículo ya registrado");
+        swal.fire({
+            title: "Placa ya registrada",
+            icon: "warning",
+            confirmButtonText: "Aceptar"
+        })
     }
 }
 

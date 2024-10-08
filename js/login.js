@@ -16,18 +16,33 @@ btnLogin.addEventListener("click", () => {
         let user = findUserLogin(IDuser.value, password.value);
         if (user) {
             localStorage.setItem("userLogged", JSON.stringify(user));
-            alert('Contraseña correcta');
+            swal.fire({
+                title: 'Bienvenido!',
+                text: 'Has iniciado sesión correctamente',
+                icon:'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                if (user.role === "administrador") {
+                    window.location.href = "administrador.html"
+                } else if (user.role === "usuario") {
+                    window.location.href = "rentar.html"
+                }
+            })
             // console.log(user);
-            if (user.role === "administrador") {
-                window.location.href = "administrador.html"
-            } else if (user.role === "usuario") {
-                window.location.href = "rentar.html"
-            }
         } else {
-            alert("Usuario o contraseña incorrecta");
+            swal.fire({
+                title: 'Error!',
+                text: 'Usuario o contraseña incorrecta',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            })
         }
     } else {
-        alert("Debes ingresar todos los campos")
+        swal.fire({
+            title: 'Error!',
+            text: 'Debes ingresar todos los campos',
+            confirmButtonText: 'Aceptar'
+        })
     }
 })
 

@@ -57,12 +57,20 @@ function saveRent() {
     let finalDateValue = new Date(finalDate.value + "T00:00:00");
     // Validar la fecha inicial
     if (initialDateValue.getTime() < currentDate.getTime()) {
-        alert("La fecha inicial no puede ser inferior a la fecha actual.");
+        swal.fire({
+            title: "Error",
+            text: "La fecha inicial no puede ser inferior a la fecha actual.",
+            confirmButtonText: "Aceptar"
+        })
         return; // Detener la función si hay un error
     }
     // Validar la fecha final
     if (finalDateValue < initialDateValue) {
-        alert("La fecha final debe ser igual o superior a la fecha inicial.");
+        swal.fire({
+            title: "Error",
+            text: "La fecha final debe ser igual o superior a la fecha inicial.",
+            confirmButtonText: "Aceptar"
+        })
         return; // Detener la función si hay un error
     }
 
@@ -80,7 +88,12 @@ function saveRent() {
         status: "activa"
     });
 
-    alert("Renta guardada exitosamente");
+    swal.fire({
+        title: "Guardado",
+        text: "La renta se ha guardado correctamente.",
+        icon: "success",
+        confirmButtonText: "Aceptar"
+    })
     localStorage.setItem("rent", JSON.stringify(rent));
     cleanFormRent();
     fillSelectPlate();
@@ -90,6 +103,7 @@ function cleanFormRent() {
     plateNumber.value = ""
     initialDate.value = ""
     finalDate.value = ""
+    rentNumber.value = ""
 }
 //funcion para generar el numero de la renta
 function generateRentNumber (){
