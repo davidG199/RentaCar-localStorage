@@ -11,4 +11,4 @@ Este es un sitio web en donde podras guardar autos para la renta como administra
 
 ### Proyecto de practica
 
-- sitio: [sitio](https://renta-car-ser.netlify.app/login)
+- sitio: [sitio](https://renta-car-ser.netlify.app/)
